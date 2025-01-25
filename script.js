@@ -50,6 +50,7 @@ reset.addEventListener('click', function() {
     first = 0;
     second = 0;
     result = 0;
+    operator = '';
 });
 
 function add (a,b){
@@ -71,8 +72,8 @@ function division (a,b){
 function percentage (a,b){
     return a*b/100;
 }
-const equals = document.querySelector('.sum'); // Make sure you have a button with class 'equals'
-equals.addEventListener('click', function() {
+
+function calculator() {
     let result;
      switch (operator){
         case '+':
@@ -103,8 +104,14 @@ equals.addEventListener('click', function() {
     second = 0;
     user2 = '';
 console.log(result);
-});
+}
 
+const equals = document.querySelector('.sum'); 
+equals.addEventListener('click', calculator);
+
+if (first > 0 && second > 0 && operator){
+    calculator;
+}
 
 
 
